@@ -30,7 +30,7 @@ class Signup extends Component {
       <Mutation mutation={SINGUP_MUTATION} variables={this.state}>
         {(signup, {error, loading}) => {
           return (
-          <Form method="post" onSubmit={(e) => {
+          <Form method="post" onSubmit={async (e) => {
             e.preventDefault();
             await signup();
             this.setState({name: '', email: '', password: ''});
